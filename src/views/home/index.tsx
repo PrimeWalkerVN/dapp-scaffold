@@ -34,7 +34,7 @@ export const HomeView = () => {
   return (
     <Row gutter={[16, 16]} align="middle">
       <Col span={24}>
-        <h2 className="text-3xl font-bold">Your balances ({formatUSD.format(hasBalance ? totalBalanceInUSD : SOL.balance * 27.61)}):</h2>
+        <h2 className="text-3xl font-bold">Your balances: <span className="text-pink-600">{formatUSD.format(hasBalance ? totalBalanceInUSD : SOL.balance * 27.61)}</span></h2>
         <h2 className="text-2xl">SOL: {SOL.balance} ({formatUSD.format(hasBalance ? SOL.balanceInUSD : SOL.balance * 27.61)})</h2>
         <h2 style={{ display: 'inline-flex', alignItems: 'center' }}>
           <TokenIcon mintAddress={SRM_ADDRESS} /> SRM: {SRM?.balance} ({formatUSD.format(SRM?.balanceInUSD)})

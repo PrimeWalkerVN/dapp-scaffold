@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import { LABELS } from "../../constants";
 import { AppBar } from "../AppBar";
+import Logo from "../../assets/solana-sol-logo.png"
 
 const { Header, Content } = Layout;
 
@@ -14,8 +15,9 @@ export const AppLayout = React.memo((props: any) => {
       <Layout title={LABELS.APP_TITLE}>
         <Header className="h-16 flex justify-between items-center">
           <Link to="/">
-            <div className="app-title">
-              <h2 className="text-white font-bold">Solana DAPP</h2>
+            <div className="flex justify-start items-center">
+              <img src={Logo} alt="logo" className="object-contain w-10 h-10"/>
+              <span className="text-white font-bold ml-6 text-2xl app-title">SOLANA DAPP</span>
             </div>
           </Link>
           <AppBar />
