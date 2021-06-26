@@ -11,7 +11,7 @@ export const AppBar = (props: { left?: JSX.Element; right?: JSX.Element }) => {
   const { connected } = useWallet();
 
   const TopBar = (
-    <div className="App-Bar-right">
+    <div className="flex items-center">
       {connected ? (
         <CurrentUserBadge />
       ) : (
@@ -30,8 +30,8 @@ export const AppBar = (props: { left?: JSX.Element; right?: JSX.Element }) => {
       >
         <Button
           shape="circle"
-          size="large"
           type="text"
+          className=""
           icon={<SettingOutlined />}
         />
       </Popover>

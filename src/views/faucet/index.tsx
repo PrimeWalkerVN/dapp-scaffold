@@ -24,12 +24,12 @@ export const FaucetView = () => {
   }, [publicKey, connection]);
 
   return (
-    <div className="flexColumn" style={{ flex: 1 }}>
+    <div className="flex flex-col justify-center" style={{ flex: 1 }}>
       <div>
         <div className="deposit-input-title" style={{ margin: 10 }}>
           {LABELS.FAUCET_INFO}
         </div>
-        <ConnectButton type="primary" onClick={airdrop}>
+        <ConnectButton type="primary" danger onClick={airdrop}>
           {LABELS.GIVE_SOL}
         </ConnectButton>
       </div>

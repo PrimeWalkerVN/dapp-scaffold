@@ -173,38 +173,37 @@ export function WalletProvider({ children = null as any }) {
         onCancel={close}
         width={400}
       >
-        {WALLET_PROVIDERS.map((provider) => {
-          const onClick = function () {
-            setProviderUrl(provider.url);
-            setAutoConnect(true);
-            close();
-          };
+        <div className="flex flex-col">
+          {WALLET_PROVIDERS.map((provider) => {
+            const onClick = function () {
+              setProviderUrl(provider.url);
+              setAutoConnect(true);
+              close();
+            };
 
-          return (
-            <Button
-              size="large"
-              type={providerUrl === provider.url ? "primary" : "ghost"}
-              onClick={onClick}
-              icon={
-                <img
-                  alt={`${provider.name}`}
-                  width={20}
-                  height={20}
-                  src={provider.icon}
-                  style={{ marginRight: 8 }}
-                />
-              }
-              style={{
-                display: "block",
-                width: "100%",
-                textAlign: "left",
-                marginBottom: 8,
-              }}
-            >
-              {provider.name}
-            </Button>
-          );
-        })}
+            return (
+              <div className="wallet-btn">
+                <Button
+                  size="large"
+                  type={providerUrl === provider.url ? "primary" : "ghost"}
+                  onClick={onClick}
+                  icon={
+                    <img
+                      alt={`${provider.name}`}
+                      width={20}
+                      height={20}
+                      src={provider.icon}
+                      style={{ marginRight: 8 }}
+                    />
+                  }
+                >
+                  {provider.name}
+                </Button>
+              </div>
+            );
+          })}
+        </div>
+        
       </Modal>
     </WalletContext.Provider>
   );
